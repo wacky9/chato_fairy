@@ -8,6 +8,10 @@ services:
     container_name: chato
     volumes:
       - "/home/winstonbs/ai/chato_fairy/log:/app/log"
+      - ./data:/app/data
+      - ./Scraping:/app/Scraping
     working_dir: /app
-    command: ["sh", "-c", "mkdir -p log && chmod -R 777 log && ls && ls -r log/ && python myapp.py"]
+    command: ["sh", "-c", "chmod -R 777 log && chmod -R 777 data && ls && python Scraping/test_scrape.py"]
 
+volumes:
+  chato:

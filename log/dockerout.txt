@@ -3,13 +3,8 @@
  Container chato  Creating
  Container chato  Created
 Attaching to chato
+chato  | Scraping
+chato  | data
 chato  | log
 chato  | myapp.py
-chato  | testfile.txt
-chato  | output.log
-chato  | dockerout.txt
-chato  | dockerbuild.txt
-chato  | test
-chato  | Successfully wrote
-chato  | test2
 [Kchato exited with code 0
