@@ -1,0 +1,13 @@
+name: chato
+
+services:
+  chato:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: chato
+    volumes:
+      - "/home/winstonbs/ai/chato_fairy/log:/app/log"
+    working_dir: /app
+    command: ["sh", "-c", "mkdir -p log && chmod -R 777 log && ls && ls -r log/ && python myapp.py"]
+

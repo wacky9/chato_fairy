@@ -1,0 +1,2 @@
+TestHello, Docker logging!
+Hello, Docker logging!

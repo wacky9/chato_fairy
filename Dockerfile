@@ -1,6 +1,9 @@
-FROM python:3.12-slim
+ARG PYTHON_VERSION=3.10.12
+FROM python:${PYTHON_VERSION}-slim AS base
 
-ENV VIRTUAL_ENV=/opt/venv
+ENV PYTHONDONTWRITEBYTECODE=1
+
+ENV VIRTUAL_ENV=/chato_env/
 RUN python3 -m venv $VIRTUAL_ENV
 ENV PATH="$VIRTUAL_ENV/bin:$PATH"
 
@@ -9,5 +12,5 @@ COPY requirements.txt .
 RUN pip install -r requirements.txt
 
 # Run the application:
-COPY myapp.py .
-CMD ["python", "myapp.py"]
+COPY myapp.py /app/
+#CMD ["python", "myapp.py"]
