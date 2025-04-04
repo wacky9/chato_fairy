@@ -4,7 +4,7 @@ import requests
 DIR_HEAD = '/app/data/'
 
 def pull():
-    URL= "https://www.themoneyillusion.com/trade-war-children-its-just-a-tweet-away/"
+    URL = "https://www.themoneyillusion.com/trade-war-children-its-just-a-tweet-away/"
     #Need user agent to avoid 403 Forbidden error
     page = requests.get(URL, headers={'User-Agent': 'Mozilla/5.0'})
     html_data = page.text
