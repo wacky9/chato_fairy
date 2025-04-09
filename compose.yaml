@@ -10,8 +10,10 @@ services:
       - "/home/winstonbs/ai/chato_fairy/log:/app/log"
       - ./data:/app/data
       - ./Scraping:/app/Scraping
+      - ./Retrieval:/app/Retrieval
     working_dir: /app
-    command: ["sh", "-c", "chmod -R 777 log && chmod -R 777 data && ls && python Scraping/test_scrape.py"]
+    #Lets the code edit data and log
+    command: ["sh", "-c", "chmod -R 777 log && chmod -R 777 data && python Retrieval/rag_test.py"]
 
 volumes:
   chato:

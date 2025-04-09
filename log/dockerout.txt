@@ -1,10 +1,18 @@
- Network chato_default  Creating
- Network chato_default  Created
- Container chato  Creating
- Container chato  Created
+ Container chato  Recreate
+ Container chato  Recreated
 Attaching to chato
-chato  | Scraping
-chato  | data
-chato  | log
-chato  | myapp.py
-[Kchato exited with code 0
+chato  | libmagic is unavailable but assists in filetype detection. Please consider installing libmagic for better results.
+chato  | libmagic is unavailable but assists in filetype detection. Please consider installing libmagic for better results.
+chato  | Traceback (most recent call last):
+chato  |   File "/app/Retrieval/rag_test.py", line 39, in <module>
+chato  |     vectorstore = store(chunks)
+chato  |   File "/app/Retrieval/rag_test.py", line 30, in store
+chato  |     embedding=OpenAIEmbeddings())
+chato  |   File "/chato_env/lib/python3.10/site-packages/pydantic/main.py", line 253, in __init__
+chato  |     validated_self = self.__pydantic_validator__.validate_python(data, self_instance=self)
+chato  |   File "/chato_env/lib/python3.10/site-packages/langchain_openai/embeddings/base.py", line 338, in validate_environment
+chato  |     self.client = openai.OpenAI(**client_params, **sync_specific).embeddings  # type: ignore[arg-type]
+chato  |   File "/chato_env/lib/python3.10/site-packages/openai/_client.py", line 116, in __init__
+chato  |     raise OpenAIError(
+chato  | openai.OpenAIError: The api_key client option must be set either by passing api_key to the client or by setting the OPENAI_API_KEY environment variable
+[Kchato exited with code 1
