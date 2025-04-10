@@ -4,6 +4,22 @@ from langchain_community.document_loaders import DirectoryLoader
 from langchain.text_splitter import RecursiveCharacterTextSplitter
 
 MSG = "How do tariffs influence the balance between protecting domestic industries and promoting international trade? In what ways can the imposition of tariffs impact global economic relationships and supply chains? What are the long-term effects of sustained tariff policies on national economic growth and consumer welfare?"
+
+from langchain_core.embeddings import Embeddings
+from chromadb.api.types import EmbeddingFunction
+from chromadb.utils.embedding_functions import SentenceTransformerEmbeddingFunction
+
+
+class ChromaEmbeddingsAdapter(Embeddings):
+    def __init__(self, ef: EmbeddingFunction):
+        self.ef = ef
+
+    def embed_documents(self, texts):
+        return self.ef(texts)
+
+    def embed_query(self, query):
+        return self.ef([query])[0]
+
 #load file from data
 def load():
     loader = DirectoryLoader('/app/data', glob='**/*.txt')
@@ -27,14 +43,14 @@ def split(docs):
 def store(chunks):
     vectorstore= Chroma.from_documents(
         documents=chunks,
-        embedding=OpenAIEmbeddings())
+        embedding=ChromaEmbeddingsAdapter(SentenceTransformerEmbeddingFunction(model_name="all-MiniLM-L6-v2")))
     return vectorstore.as_retriever(search_kwargs={"k": 1})
 
 #Query the vector database
 def query(message, vectorstore):
-    return vectorstore.similarity_search(message)
+    return vectorstore.invoke(message)
 
 docs = load()
 chunks = split(docs)
 vectorstore = store(chunks)
-print(query(MSG))
+print(query(MSG,vectorstore))

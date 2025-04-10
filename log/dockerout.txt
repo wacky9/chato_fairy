@@ -3,16 +3,6 @@
 Attaching to chato
 chato  | libmagic is unavailable but assists in filetype detection. Please consider installing libmagic for better results.
 chato  | libmagic is unavailable but assists in filetype detection. Please consider installing libmagic for better results.
-chato  | Traceback (most recent call last):
-chato  |   File "/app/Retrieval/rag_test.py", line 39, in <module>
-chato  |     vectorstore = store(chunks)
-chato  |   File "/app/Retrieval/rag_test.py", line 30, in store
-chato  |     embedding=OpenAIEmbeddings())
-chato  |   File "/chato_env/lib/python3.10/site-packages/pydantic/main.py", line 253, in __init__
-chato  |     validated_self = self.__pydantic_validator__.validate_python(data, self_instance=self)
-chato  |   File "/chato_env/lib/python3.10/site-packages/langchain_openai/embeddings/base.py", line 338, in validate_environment
-chato  |     self.client = openai.OpenAI(**client_params, **sync_specific).embeddings  # type: ignore[arg-type]
-chato  |   File "/chato_env/lib/python3.10/site-packages/openai/_client.py", line 116, in __init__
-chato  |     raise OpenAIError(
-chato  | openai.OpenAIError: The api_key client option must be set either by passing api_key to the client or by setting the OPENAI_API_KEY environment variable
-[Kchato exited with code 1
+chato  | Xet Storage is enabled for this repo, but the 'hf_xet' package is not installed. Falling back to regular HTTP download. For better performance, install the package with: `pip install huggingface_hub[hf_xet]` or `pip install hf_xet`
+chato  | [Document(id='db0204f2-b3fd-4359-992a-fbf5678e1f8e', metadata={'source': '/app/data/test_file.txt'}, page_content='I must say that I am really enjoying seeing the US lose the trade war.\xa0 For years (even before Trump) we’ve been pushing other countries around.\xa0 It’s nice to see someone finally stand up to American bullies. That’s doesn’t mean I’m “pro-China” (whatever that means), as I hope the Chinese government loses its battle with pro-democracy forces in Hong Kong.\xa0 I’m pro-neoliberalism, which I’ll support any time and any place in the world.\n\nSpeaking of neoliberalism, this FT editorial is another sign of the decline and fall of Western Civilization:\n\nIt’s sad to see former neoliberal media outlets such as the FT and The Economist move in a statist direction.\xa0 A younger generation seems to have forgotten all the lessons of the final 3 decades of the 20th century.\xa0 I suppose some people would cite a quote attributed to Keynes:\n\nWhen the facts change, I change my mind. What do you do, Sir?\n\nSo let’s consider the facts:')]
+[Kchato exited with code 0
