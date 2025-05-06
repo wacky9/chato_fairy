@@ -12,5 +12,6 @@ COPY requirements.txt .
 RUN pip install -r requirements.txt
 
 # Run the application:
-COPY myapp.py /app/
+COPY llm_serve.py /app/
+COPY basic_pipeline.py /app/
 #CMD ["python", "myapp.py"]

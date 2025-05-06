@@ -25,6 +25,7 @@ cryptography==44.0.2
 dataclasses-json==0.6.7
 Deprecated==1.2.18
 distro==1.9.0
+docstring_parser==0.16
 durationpy==0.9
 emoji==2.14.1
 eval_type_backport==0.2.2
@@ -53,6 +54,7 @@ importlib_resources==6.5.2
 Jinja2==3.1.6
 jiter==0.9.0
 joblib==1.4.2
+jsonargparse==4.39.0
 jsonpatch==1.33
 jsonpointer==3.0.0
 kubernetes==32.0.1
@@ -64,6 +66,9 @@ langchain-openai==0.3.12
 langchain-text-splitters==0.3.8
 langdetect==1.0.9
 langsmith==0.3.27
+lightning==2.5.1.post0
+lightning-utilities==0.14.3
+litgpt==0.5.8
 lxml==5.3.2
 markdown-it-py==3.0.0
 MarkupSafe==3.0.2
@@ -128,6 +133,7 @@ python-dotenv==1.1.0
 python-iso639==2025.2.18
 python-magic==0.4.27
 python-oxmsg==0.0.2
+pytorch-lightning==2.5.1.post0
 PyYAML==6.0.2
 RapidFuzz==3.13.0
 regex==2024.11.6
@@ -153,10 +159,12 @@ tiktoken==0.9.0
 tokenizers==0.21.1
 tomli==2.2.1
 torch==2.6.0
+torchmetrics==1.7.1
 tqdm==4.67.1
 transformers==4.51.2
 triton==3.2.0
 typer==0.15.2
+typeshed_client==2.7.0
 typing-inspect==0.9.0
 typing-inspection==0.4.0
 typing_extensions==4.13.0

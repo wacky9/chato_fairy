@@ -13,7 +13,7 @@ services:
       - ./Retrieval:/app/Retrieval
     working_dir: /app
     #Lets the code edit data and log
-    command: ["sh", "-c", "chmod -R 777 log && chmod -R 777 data && python Retrieval/rag_test.py"]
+    command: ["sh", "-c", "chmod -R 777 log && chmod -R 777 data && python basic_pipeline.py"]
 
 volumes:
   chato:
