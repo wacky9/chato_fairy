@@ -19,7 +19,7 @@ class ChromaEmbeddingsAdapter(Embeddings):
 
 #load file from data
 def load():
-    loader = DirectoryLoader('/app/data', glob='**/*.txt')
+    loader = DirectoryLoader('data', glob='**/*.txt')
     docs = loader.load()
     return docs
 
@@ -41,11 +41,12 @@ def store(chunks):
     vectorstore= Chroma.from_documents(
         documents=chunks,
         embedding=ChromaEmbeddingsAdapter(SentenceTransformerEmbeddingFunction(model_name="all-MiniLM-L6-v2")))
-    return vectorstore.as_retriever(search_kwargs={"k": 4})
+    return vectorstore.as_retriever(search_kwargs={"k": 3})
 
 #Query the vector database
 def query(message, vectorstore):
-    return vectorstore.invoke(message)
+    docs = vectorstore.invoke(message)
+    return "\n".join([doc.page_content for doc in docs])
 
 def retrieve(message):
     docs = load()
