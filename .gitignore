@@ -41,7 +41,6 @@ coverage.xml
 .pytest_cache/
 cover/
 
-# PEP 582; used by e.g. github.com/David-OConnor/pyflow and github.com/pdm-project/pdm
 __pypackages__/
 
 # Environments
@@ -53,4 +52,9 @@ ENV/
 env.bak/
 venv.bak/
 chato_env/
+
+#folders with non-public info
 notes/
+
+#folders that are too large to be in the repo
+checkpoints/

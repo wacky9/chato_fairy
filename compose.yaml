@@ -11,6 +11,7 @@ services:
       - ./data:/app/data
       - ./Scraping:/app/Scraping
       - ./Retrieval:/app/Retrieval
+      - ./checkpoints:/app/checkpoints
     working_dir: /app
     #Lets the code edit data and log
     command: ["sh", "-c", "chmod -R 777 log && chmod -R 777 data && python basic_pipeline.py"]
