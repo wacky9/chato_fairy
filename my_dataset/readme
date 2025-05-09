@@ -1,0 +1,4 @@
+This directory contains a custom dataset containing high-quality writing about economics.
+There is a folder called data not present in the git repository because of its size. This folder contains the raw text data that composes the dataset
+Dataset sources (will be updated as more data is found):
+- themoneyillusion.com: Scott Sumner's blog. Scott is a macroeconomist focused on monetary matters. 
