@@ -2,6 +2,14 @@ name: chato
 
 services:
   chato:
+    # enables GPU use
+    deploy:
+      resources:
+        reservations:
+          devices:
+            - driver: nvidia
+              count: 1
+              capabilities: [gpu]
     build:
       context: .
       dockerfile: Dockerfile
@@ -12,9 +20,11 @@ services:
       - ./Scraping:/app/Scraping
       - ./Retrieval:/app/Retrieval
       - ./checkpoints:/app/checkpoints
+      - ./config:/app/config
+      - ./my_dataset:/app/my_dataset
     working_dir: /app
     #Lets the code edit data and log
-    command: ["sh", "-c", "chmod -R 777 log && chmod -R 777 data && python basic_pipeline.py"]
+    command: ["sh", "-c", "nvidia-smi && chmod -R 777 log && chmod -R 777 data && python basic_pipeline.py"]
 
 volumes:
   chato:

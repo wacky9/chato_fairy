@@ -1,12 +1,77 @@
  Container chato  Recreate
  Container chato  Recreated
 Attaching to chato
-chato  | /chato_env/lib/python3.10/site-packages/litgpt/utils.py:647: UserWarning: The file size of checkpoints/meta-llama/Meta-Llama-3.1-8B/lit_model.pth is over 4.2 GB. Using a model with more than 1B parameters on a CPU can be slow, it is recommended to switch to a GPU.
-chato  |   warnings.warn(
+chato  | Fri May  9 20:58:12 2025       
+chato  | +-----------------------------------------------------------------------------------------+
+chato  | | NVIDIA-SMI 560.35.02              Driver Version: 560.94         CUDA Version: 12.6     |
+chato  | |-----------------------------------------+------------------------+----------------------+
+chato  | | GPU  Name                 Persistence-M | Bus-Id          Disp.A | Volatile Uncorr. ECC |
+chato  | | Fan  Temp   Perf          Pwr:Usage/Cap |           Memory-Usage | GPU-Util  Compute M. |
+chato  | |                                         |                        |               MIG M. |
+chato  | |=========================================+========================+======================|
+chato  | |   0  NVIDIA GeForce RTX 3090        On  |   00000000:01:00.0  On |                  N/A |
+chato  | |  0%   32C    P8             31W /  350W |    1423MiB /  24576MiB |     27%      Default |
+chato  | |                                         |                        |                  N/A |
+chato  | +-----------------------------------------+------------------------+----------------------+
+chato  |                                                                                          
+chato  | +-----------------------------------------------------------------------------------------+
+chato  | | Processes:                                                                              |
+chato  | |  GPU   GI   CI        PID   Type   Process name                              GPU Memory |
+chato  | |        ID   ID                                                               Usage      |
+chato  | |=========================================================================================|
+chato  | |  No running processes found                                                             |
+chato  | +-----------------------------------------------------------------------------------------+
 chato  | libmagic is unavailable but assists in filetype detection. Please consider installing libmagic for better results.
 chato  | libmagic is unavailable but assists in filetype detection. Please consider installing libmagic for better results.
-chato  | libmagic is unavailable but assists in filetype detection. Please consider installing libmagic for better results.
-chato  | libmagic is unavailable but assists in filetype detection. Please consider installing libmagic for better results.
-chato  | Xet Storage is enabled for this repo, but the 'hf_xet' package is not installed. Falling back to regular HTTP download. For better performance, install the package with: `pip install huggingface_hub[hf_xet]` or `pip install hf_xet`
+chato  | Loading instruction and prompt...
+chato  | Processing
+chato  | When the facts change, I change my mind. What do you do, Sir?
 chato  | 
+chato  | So let’s consider the facts:
+chato  | 
+chato  | 1. Market economies did better than statist economies before the Great Recession.
+chato  | 
+chato  | 2.  Market economies did better than statist economies during the Great Recession.
+chato  | 
+chato  | 3.  Market economies did better than statist economies after the Great recession.
+chato  | 
+chato  | In the same edition of the FT is another headline, a reminder of what statist policies do to an economy:
+chato  | 
+chato  | I hope Tyler Cowen will hurry up and write his book entitled “The Great Forgetting.”
+chato  | In the same edition of the FT is another headline, a reminder of what statist policies do to an economy:
+chato  | 
+chato  | I hope Tyler Cowen will hurry up and write his book entitled “The Great Forgetting.”
+chato  | 
+chato  | We’ve forgotten that monetary policy drives NGDP, and that fiscal policy is a fifth wheel.  We’ve forgotten that trade deficits are not a problem and budget deficits are.  We’ve forgotten that industrial policies don’t work.  We’ve forgotten that price, rent, and wage controls don’t work.  We’ve forgotten that saving is a virtue.  We’ve forgotten that low interest rates don’t mean money is easy.  We’ve forgotten how to build infrastructure. We’ve forgotten that nationalism is one of the great evils of world history.  We’ve forgotten that socialism is another of the great evils of world history.
+chato  | 
+chato  | Here’s Mick:
+chato  | 
+chato  | Oh, a storm is threat’ning
+chato  | 
+chato  | At least I think that’s what he said.
+chato  | 
+chato  | PS.  Brian asked me to talk about monetary policy.  Hey Fed, cut rates by 50 basis points.
+chato  | 
+chato  | HT:  Stephen Kirchner
+chato  | 
+chato  | Tags:
+chato  | I must say that I am really enjoying seeing the US lose the trade war.  For years (even before Trump) we’ve been pushing other countries around.  It’s nice to see someone finally stand up to American bullies. That’s doesn’t mean I’m “pro-China” (whatever that means), as I hope the Chinese government loses its battle with pro-democracy forces in Hong Kong.  I’m pro-neoliberalism, which I’ll support any time and any place in the world.
+chato  | 
+chato  | Speaking of neoliberalism, this FT editorial is another sign of the decline and fall of Western Civilization:
+chato  | 
+chato  | It’s sad to see former neoliberal media outlets such as the FT and The Economist move in a statist direction.  A younger generation seems to have forgotten all the lessons of the final 3 decades of the 20th century.  I suppose some people would cite a quote attributed to Keynes:
+chato  | 
+chato  | When the facts change, I change my mind. What do you do, Sir?
+chato  | 
+chato  | So let’s consider the facts:
+chato  | Setting up LLM
+chato  | Based on the provided context, the correct answer to the prompt would be:
+chato  | 
+chato  | Free markets economies performed better than socialist economies during the Great Recession.
+chato  | 
+chato  | This is supported by points in the context:
+chato  | 
+chato  | 1. Market economies did better than statist economies before the Great Recession.
+chato  | 2. Market economies did better than statist economies during the Great Recession.
+chato  | 3. Market  did better than during after the Recession.
 [Kchato exited with code 0
