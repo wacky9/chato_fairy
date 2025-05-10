@@ -1,0 +1,6 @@
+Assume all the information in the provided text is completely factual. 
+Create 3 questions about economics and 3 associated answers to those questions, based on the information provided in the text below.
+Try to create questions about the most important economic ideas mentioned in the text 
+Do not mention the author or the text itself
+
+Text:
