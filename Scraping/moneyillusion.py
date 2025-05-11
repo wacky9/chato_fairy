@@ -44,10 +44,12 @@ def process_html():
     file.close()
     for u in urls:
         u = u.strip()
-        file = open("my_dataset/html/MI/" + u.split("/")[-1] + ".html", "r")
+        file = open("my_dataset/html/MI/" + u.split("/")[-2] + ".html", "r")
         html_data = file.read()
+        file.close()
+        #Parse the html
         soup = bs4.BeautifulSoup(html_data, 'html.parser')
-        file = open("my_dataset/text/MI/" + u.split("/")[-1] + ".txt", "w", buffering=1)
+        file = open("my_dataset/data/" + u.split("/")[-2] + ".txt", "w", buffering=1)
         paragraph_list = soup.find("div",class_="post").find_all("p")
         for paragraph in paragraph_list:
             # Saves only basic <p> tags
@@ -56,4 +58,4 @@ def process_html():
                 file.write("\n")
         file.close()
 
-download_html()
+process_html()

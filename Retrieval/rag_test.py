@@ -19,7 +19,7 @@ class ChromaEmbeddingsAdapter(Embeddings):
 
 #load file from data
 def load():
-    loader = DirectoryLoader('data', glob='**/*.txt')
+    loader = DirectoryLoader('my_dataset/data', glob='**/*.txt')
     docs = loader.load()
     return docs
 
