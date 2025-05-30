@@ -2,7 +2,7 @@ from llm_serve import setup, query_llm
 from Retrieval.rag_test import retrieve
 print("Loading instruction and prompt...")
 #Load instruction and prompt
-file = open('config/instruction.txt', 'r')
+file = open('config/instruction_rag.txt', 'r')
 instruction = file.read()
 file.close()
 file = open('config/prompt.txt', 'r')
