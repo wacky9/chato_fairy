@@ -4,7 +4,8 @@ from langchain.text_splitter import RecursiveCharacterTextSplitter
 from langchain_core.embeddings import Embeddings
 from chromadb.api.types import EmbeddingFunction
 from chromadb.utils.embedding_functions import SentenceTransformerEmbeddingFunction
-
+from langchain_community.retrievers import BM25Retriever
+from langchain.retrievers import EnsembleRetriever
 
 class ChromaEmbeddingsAdapter(Embeddings):
     def __init__(self, ef: EmbeddingFunction):
@@ -22,7 +23,6 @@ def load():
     docs = loader.load()
     return docs
 
-
 #Split the text
 def split(docs):
     text_splitter = RecursiveCharacterTextSplitter(
@@ -37,10 +37,16 @@ def split(docs):
 
 #Store in a vector database
 def store(chunks):
+    k = 5
     vectorstore= Chroma.from_documents(
         documents=chunks,
         embedding=ChromaEmbeddingsAdapter(SentenceTransformerEmbeddingFunction(model_name="all-MiniLM-L6-v2")))
-    return vectorstore.as_retriever(search_kwargs={"k": 5})
+    v_retriever = vectorstore.as_retriever(search_kwargs={"k": k})
+     # Create BM25Retriever from the documents
+    bm25_retriever = BM25Retriever.from_documents(documents=chunks, k=k)
+    # Ensemble the retrievers using Langchain’s EnsembleRetriever Object
+    ensemble_retriever = EnsembleRetriever(retrievers=[v_retriever, bm25_retriever], weights=[0.5, 0.5])
+    return ensemble_retriever
 
 #Query the vector database
 def query(message, vectorstore):

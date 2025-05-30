@@ -1,5 +1,5 @@
 from llm_serve import setup, query_llm
-from Retrieval.rag_test import retrieve
+from Retrieval.hybrid_rag import create, retrieve
 print("Loading instruction and prompt...")
 #Load instruction and prompt
 file = open('config/instruction_rag.txt', 'r')
@@ -12,7 +12,9 @@ print("Processing")
 #Retrieve information
 #cut off first line of prompt to get the user query
 user_query = prompt.split('\n', 1)[1].strip()
-retrieved_docs = retrieve(user_query)
+print("Creating vector database")
+db = create()
+retrieved_docs = retrieve(user_query, db)
 print(retrieved_docs)
 message = f"{instruction}\n\n{retrieved_docs}\n\n{prompt}"
 print("Setting up LLM")

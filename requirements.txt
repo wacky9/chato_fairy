@@ -139,6 +139,7 @@ python-oxmsg==0.0.2
 pytorch-lightning==2.5.1.post0
 PyYAML==6.0.2
 pyzmq==26.4.0
+rank-bm25==0.2.2
 RapidFuzz==3.13.0
 regex==2024.11.6
 requests==2.32.3
