@@ -11,7 +11,8 @@ Chato Fairy is composed of three important sections. First is a custom dataset o
 
 ## Dataset
 There are some currently existing LLM datasets for economics, ones built from a [handful of textbooks](https://huggingface.co/datasets/cxllin/economics), [paper abstracts](https://huggingface.co/datasets/onurkeles/econ_paper_abstracts), or econ-adjacent fields such as [finance](https://huggingface.co/datasets/gbharti/finance-alpaca). These are useful datasets but many of the texts contained within are too complicated or specific for ordinary use.
-My dataset focuses on a specific type source: economists writing about economics for public consumption. This dataset thus contains less complicated and more conversational texts (and ones more oriented to what ordinary people care about as opposed to the inside baseball present in in econ papers) while still being high-quality and composed of the collective knowledge of hundreds of economists. 
+
+My dataset focuses on a specific type of source: economists writing about economics for public consumption. This dataset thus contains less complicated and more conversational texts (and ones more oriented to what ordinary people care about as opposed to the inside baseball present in econ papers) while still being high-quality and composed of the collective knowledge of hundreds of economists. 
 
 The dataset is currently under construction and this section will be regularly updated as more sources of texts are added
 
