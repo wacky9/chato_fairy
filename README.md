@@ -1,5 +1,5 @@
 # chato_fairy
-The Chato Fairy is an LLM applicaton designed to work specifically on economic issues. This application can summarize economic research, accurately answer economic questions, and otherwise assist in economic endeavors.
+The Chato Fairy is an LLM application designed to work specifically on economic issues. This application can summarize economic research, accurately answer economic questions, and otherwise assist in economic endeavors.
 
 # Why Chato Fairy
 There is a growing need for LLMs that are focused on and capable of assisting users in working with complex subjects. Economics is a field ripe for such an application. Economics is a deep and wide field where most people have little-to-no expertise. Nevertheless, these people are regularly asked to engage in difficult decisions where knowledge of economics would be quite useful. For example, Burke and Manz (2014) identify a link between economic literacy and more accurate inflation expectations. Households having more accurate inflation expectations would improve their budgeting and prevent nasty surprises. 
