@@ -2,3 +2,14 @@ This directory contains a custom dataset containing high-quality writing about e
 There is a folder called data not present in the git repository because of its size. This folder contains the raw text data that composes the dataset
 Dataset sources (will be updated as more data is found):
 - themoneyillusion.com: Scott Sumner's blog. Scott is a macroeconomist focused on monetary matters. 
+- voxeu: CEPR columns about economic research
+
+note: 
+Traceback (most recent call last):
+  File "/home/winstonbs/ai/chato_fairy/Scraping/voxeu.py", line 79, in <module>
+    download_html()
+  File "/home/winstonbs/ai/chato_fairy/Scraping/voxeu.py", line 38, in download_html
+    if u.split("/")[ARTICLE_NAME_INDEX] + ".html" in open("my_dataset/html/VOXEU/").read():
+IsADirectoryError: [Errno 21] Is a directory: 'my_dataset/html/VOXEU/'
+(chato_env) winstonbs@DESKTOP-AGGH571:~/ai/chato_fairy$ python Scraping/voxeu.py
+Error fetching https://cepr.org/voxeu/columns/three-challenges-silvio-iv: ('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))
