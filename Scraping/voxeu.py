@@ -32,6 +32,7 @@ def download_html():
     file = open("my_dataset/utility/voxeu.txt", "r")
     urls = file.readlines()
     file.close()
+    """
     for u in urls:
         u = u.strip()
         #filter out already downloaded articles
@@ -47,8 +48,21 @@ def download_html():
         file.write(html_data)
         file.close()
         # Delay crawling
+        time.sleep(DELAY)"""
+    starting_index = 9705
+    for i in range(starting_index,len(urls)):
+        u = urls[i].strip()
+        try:
+            page = requests.get(u, headers={'User-Agent': 'Mozilla/5.0'})
+        except requests.exceptions.RequestException as e:
+            print(f"Error fetching {u}: {e}")
+            break
+        html_data = page.text
+        file = open("my_dataset/html/VOXEU/" + u.split("/")[ARTICLE_NAME_INDEX] + ".html", "w", buffering=1)
+        file.write(html_data)
+        file.close()
+        # Delay crawling
         time.sleep(DELAY)
-
 
 
 def process_html():
@@ -57,6 +71,8 @@ def process_html():
     file.close()
     for u in urls:
         u = u.strip()
+        if os.path.isfile("my_dataset/data/" + u.split("/")[ARTICLE_NAME_INDEX] + ".html"):
+            continue
         file = open("my_dataset/html/VOXEU/" + u.split("/")[ARTICLE_NAME_INDEX] + ".html", "r")
         html_data = file.read()
         file.close()
@@ -75,5 +91,4 @@ def process_html():
                 file.write("\n")
         file.close()
 
-
-download_html()
+process_html()
