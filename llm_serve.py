@@ -2,7 +2,7 @@
 from litgpt import LLM
 
 def setup():
-    return LLM.load("meta-llama/Meta-Llama-3.1-8B-Instruct")
+    return LLM.load("Qwen/Qwen2.5-14B-Instruct")
 
 def query_llm(message,llm):
     return llm.generate(message,max_new_tokens=500)

@@ -6,7 +6,7 @@ from chromadb.api.types import EmbeddingFunction
 from chromadb.utils.embedding_functions import SentenceTransformerEmbeddingFunction
 from langchain_community.retrievers import BM25Retriever
 from langchain.retrievers import EnsembleRetriever
-from rag_base import RAG
+from Retrieval.rag_base import RAG
 class ChromaEmbeddingsAdapter(Embeddings):
     def __init__(self, ef: EmbeddingFunction):
         self.ef = ef
