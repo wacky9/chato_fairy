@@ -4,7 +4,7 @@ from langchain.text_splitter import RecursiveCharacterTextSplitter
 from langchain_core.embeddings import Embeddings
 from chromadb.api.types import EmbeddingFunction
 from chromadb.utils.embedding_functions import SentenceTransformerEmbeddingFunction
-from rag_base import RAG
+from Retrieval.rag_base import RAG
 
 class ChromaEmbeddingsAdapter(Embeddings):
     def __init__(self, ef: EmbeddingFunction):
@@ -33,8 +33,13 @@ class RAG_BASIC(RAG):
         return splits
 
     #Store in a vector database
-    def store(self,chunks):
-        vectorstore= Chroma.from_documents(
-            documents=chunks,
-            embedding=ChromaEmbeddingsAdapter(SentenceTransformerEmbeddingFunction(model_name=self.model)))
+    def store(self,chunks,cache):
+        if cache:
+            vectorstore = Chroma(persist_directory='my_dataset/vectorstore', embedding_function=ChromaEmbeddingsAdapter(SentenceTransformerEmbeddingFunction(model_name=self.model)))
+        else:
+            vectorstore = Chroma.from_documents(
+                documents=chunks,
+                embedding=ChromaEmbeddingsAdapter(SentenceTransformerEmbeddingFunction(model_name=self.model)),
+                persist_directory='my_dataset/vectorstore' 
+                )
         return vectorstore.as_retriever(search_kwargs={"k": self.chunk_num})

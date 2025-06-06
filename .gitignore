@@ -57,6 +57,7 @@ chato_env/
 notes/
 
 #folders that are too large to be in the repo
-checkpoints/
+models/
 my_dataset/data
 my_dataset/html
+my_dataset/vectorstore
