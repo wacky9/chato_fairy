@@ -1,0 +1,4 @@
+Consider the following statement and evaluate it based on your knowledge and any context provided. The first line of your response should consists only and entirely of one of the following phrases:
+Strongly Agree, Agree, Disagree, Strongly Disagree, Uncertain
+You may provide additional context or reasoning after the first line, but do not include any text in the first line except Strongly Agree, Agree, Disagree, Strongly Disagree, or Uncertain.
+Statement:
