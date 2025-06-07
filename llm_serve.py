@@ -12,8 +12,16 @@ def setup():
 
 def query_llm(message,llm):
     model, tokenizer = llm
+    prompt = [
+        {"role": "user","content":message}
+    ]
+    text = tokenizer.apply_chat_template(
+        prompt,
+        tokenize=False,
+        enable_thinking=False
+    )
     # Encode the message
-    inputs = tokenizer(message, return_tensors="pt").to(model.device)
+    inputs = tokenizer([text], return_tensors="pt").to(model.device)
     result = model.generate(**inputs, max_new_tokens=50)
     # Decode the result
     return tokenizer.decode(result[0], skip_special_tokens=True)

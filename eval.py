@@ -3,7 +3,10 @@ import json
 import random
 from llm_serve import setup, query_llm
 from collections import Counter
+from Retrieval.rag_basic import RAG_BASIC
 
+agent = RAG_BASIC()
+agent.create()
 # Two arrays of 5 variables. AI array has one 1 and 4 0s. 
 def loss(experts, AI):
     # if there's an error, pretend loss is 0
@@ -41,7 +44,7 @@ def evaluate(n=10):
             question = experts["question"]
             response = experts["weighted"]
             # Get AI response
-            AI = base_response(llm,question)
+            AI = rag_response(llm,question)
             l = loss(response,AI)
             # Check if AI gets it correct
             if l < 0.001:
@@ -89,7 +92,12 @@ def base_response(llm,question):
     return get_response(llm, prompt)
 
 def rag_response(llm,question):
-    pass
+    retrieved_docs = agent.query(question)
+    file = open('config/eval_prompt.txt', 'r')
+    prompt = file.read()
+    file.close()
+    message = f"Context:\n{retrieved_docs}\n{prompt} \n{question}\nResponse:\n"
+    return get_response(llm,message)
 
 def get_response(llm,msg):
     reply = query_llm(msg, llm)

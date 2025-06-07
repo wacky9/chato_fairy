@@ -50,8 +50,17 @@ Consider the IGM survey on the [NCAA](https://kentclarkcenter.org/surveys/the-nc
 Using the IGM data, I test two things. First, I test the consistency of the LLM: whether or not it maintains the same opinion when asked the same question repeatedly. Second I test the loss and accuracy for the survey questions.
 
 LLM tested: Qwen-32b-AWQ. 
+Plain LLM:
 Average Consistency: 0.898
 34 out of 1000 responses incorrectly formatted
 Random sample of 250 questions:
 Loss = 242.1
-Accuracy = 21.2%
+Accuracy = 17.6% (uncorrected: 21.2%)
+11/250 responses incorrectly formatted
+
+chato_fairy (basic RAG, default embedding model):
+Random sample of 250 questions:
+Loss = 146.6
+Accuracy = 36.2% (uncorrected:  50.4%)
+55/250 responses incorrectly formatted
+
