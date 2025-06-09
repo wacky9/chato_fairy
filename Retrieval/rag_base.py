@@ -35,7 +35,7 @@ class RAG(ABC):
         else:
             docs = self.load()
             chunks = self.split(docs)
-            vectorstore = self.store(chunks)
+            vectorstore = self.store(chunks,cache)
             self.vs = vectorstore
     
     #version of create with benchmarking

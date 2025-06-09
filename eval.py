@@ -44,7 +44,7 @@ def evaluate(n=10):
             question = experts["question"]
             response = experts["weighted"]
             # Get AI response
-            AI = rag_response(llm,question)
+            AI = base_response(llm,question)
             l = loss(response,AI)
             # Check if AI gets it correct
             if l < 0.001:
@@ -67,7 +67,7 @@ def consistency(n=10):
         #Check each question 20 times
         for k in range(20):
             # Get AI response
-            AI = base_response(llm,question)
+            AI = rag_response(llm,question)
             single_question.append(AI.index(1))
         all_responses.append(single_question)
     accuracy = []
@@ -96,24 +96,24 @@ def rag_response(llm,question):
     file = open('config/eval_prompt.txt', 'r')
     prompt = file.read()
     file.close()
-    message = f"Context:\n{retrieved_docs}\n{prompt} \n{question}\nResponse:\n"
+    message = f"{prompt} \n{question}\nContext:\n{retrieved_docs}\nResponse:\n"
     return get_response(llm,message)
 
 def get_response(llm,msg):
     reply = query_llm(msg, llm)
     #remove the prompt from the reply
-    reply = reply.split("Response:")[-1].strip()
+    response = reply.split("Response:")[-1].strip()
     #Get first line of the reply
-    reply = reply.split("\n")[0]
-    reply = reply.strip()
-    reply = reply.strip('.,!')
-    if reply in response_dict:
-        return response_dict[reply]
+    response = response.split("\n")[0]
+    response = response.strip()
+    response = response.strip('.,!')
+    if response in response_dict:
+        return response_dict[response]
     else:
-        print(f"Unknown response: {reply}")
+        print(f"Unknown response: {response}")
         return [1, 1, 1, 1, 1]
 
-evaluate(250)
+evaluate(100)
 
 
 #c = consistency(50)

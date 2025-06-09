@@ -1,5 +1,5 @@
 from llm_serve import setup, query_llm
-from Retrieval.rag_basic import RAG_BASIC
+from Retrieval.rag_ft import RAG_FT
 print("Loading instruction and prompt...")
 #Load instruction and prompt
 file = open('config/instruction_rag.txt', 'r')
@@ -13,8 +13,8 @@ print("Processing")
 #cut off first line of prompt to get the user query
 user_query = prompt.split('\n', 1)[1].strip()
 print("Creating vector database")
-agent = RAG_BASIC()
-agent.create()
+agent = RAG_FT()
+agent.create(cache=False)
 retrieved_docs = agent.query(user_query)
 message = f"{instruction}\n\n{retrieved_docs}\n\n{prompt}"
 print(message)
