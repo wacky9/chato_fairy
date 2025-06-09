@@ -44,7 +44,7 @@ class RAG_FT(RAG):
             vectorstore = Chroma.from_documents(
                 collection_name="ft_vs",
                 documents=chunks,
-                embedding=ChromaEmbeddingsAdapter(SentenceTransformerEmbeddingFunction(model_name=self.model, normalize_embeddings=True, device="cuda", model_kwargs={"torch_dtype": "float16"})),
+                embedding=ChromaEmbeddingsAdapter(SentenceTransformerEmbeddingFunction(model_name=self.model, normalize_embeddings=True, device="cuda", model_kwargs={"torch_dtype": "torch.float16"})),
                 persist_directory='my_dataset/vectorstore/ft' 
                 )
         return vectorstore.as_retriever(search_kwargs={"k": self.chunk_num})
