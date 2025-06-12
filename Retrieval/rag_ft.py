@@ -6,7 +6,6 @@ from langchain_core.embeddings import Embeddings
 from chromadb.api.types import EmbeddingFunction
 from chromadb.utils.embedding_functions import SentenceTransformerEmbeddingFunction
 from Retrieval.rag_base import RAG
-from sentence_transformers import SentenceTransformer
 
 class ChromaEmbeddingsAdapter(Embeddings):
     def __init__(self, ef: EmbeddingFunction):
@@ -39,7 +38,7 @@ class RAG_FT(RAG):
     #Store in a vector database
     def store(self,chunks,cache):
         if cache:
-            vectorstore = Chroma(collection_name="ft_vs", persist_directory='my_dataset/vectorstor/ft', embedding_function=ChromaEmbeddingsAdapter(SentenceTransformerEmbeddingFunction(model_name=self.model)))
+            vectorstore = Chroma(collection_name="ft_vs", persist_directory='my_dataset/vectorstore/ft', embedding_function=ChromaEmbeddingsAdapter(SentenceTransformerEmbeddingFunction(model_name=self.model)))
         else:
             vectorstore = Chroma.from_documents(
                 collection_name="ft_vs",

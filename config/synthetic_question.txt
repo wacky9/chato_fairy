@@ -1,0 +1,4 @@
+Ask a question about the following chunk of text. Ensure that the question is related to the chunk and that the question is about the core idea of the text. +
+Do not mention the text or the existence of the text. Ask a question about the content in the text.
+The entirety of your response should be a question. Please do not add any other text. Just respond with a single question. 
+Text:

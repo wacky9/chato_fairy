@@ -14,10 +14,9 @@ print("Processing")
 user_query = prompt.split('\n', 1)[1].strip()
 print("Creating vector database")
 agent = RAG_FT()
-agent.create(cache=False)
+agent.create()
 retrieved_docs = agent.query(user_query)
 message = f"{instruction}\n\n{retrieved_docs}\n\n{prompt}"
-print(message)
 print("Setting up LLM")
 #setup llm
 llm = setup()
